@@ -1,0 +1,34 @@
+# node_modules (ไม่ต้อง push เพราะใหญ่ และ reinstall ได้)
+node_modules/
+
+# environment variables
+.env
+.env.local
+.env.production
+
+# log files
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# editor-specific
+.vscode/
+.idea/
+
+# build outputs (ถ้ามี)
+dist/
+build/
+
+# Optional: render auto-generated files
+*.sqlite
+*.db
+
+# Others (เช่นไฟล์ชั่วคราว)
+tmp/
+temp/
