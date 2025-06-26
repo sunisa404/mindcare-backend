@@ -65,6 +65,9 @@ async function initDB() {
     }
 }
 
+app.get("/", (req, res) => {
+  res.send("MindCare API พร้อมใช้งานแล้ว!");
+});
 
 //api
 app.use("/api/phq9", phq9Route); //แบบประเมิน
