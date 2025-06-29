@@ -7,6 +7,8 @@ import phq9Route from "./routes/phq9Route.js";
 import recommendVDORoute from "./routes/recommendVDORoute.js"
 import moodTrackingRoute from "./routes/moodtrackingRoute.js";
 import clerkRoute from "./routes/clerkRoute.js";
+import statsRoute from "./routes/statsRoute.js";
+
 dotenv.config();
 const app = express();
 
@@ -65,12 +67,16 @@ async function initDB() {
     }
 }
 
+app.get("/", (req, res) => {
+  res.send("MindCare API พร้อมใช้งานแล้ว!");
+});
 
 //api
 app.use("/api/phq9", phq9Route); //แบบประเมิน
 app.use("/api/recommendVDO", recommendVDORoute); //เกี่ยวกับวีดีโอ
 app.use("/api/moodTracking", moodTrackingRoute); //ประเมินอารมณฺ์
 app.use("/api/clerk", clerkRoute); //ผู้ใช้
+app.use("/api/stats", statsRoute);//สถิติ
 
 initDB().then(() => {
     app.listen(PORT, () => {
